@@ -1,5 +1,8 @@
+'use strict'
+
 const fsP = require('fs/promises');
 
+//** Take one argument (path),and read the file with that path, and print the contents of that file */
 async function cat(path) {
     try {
         let contents = await fsP.readFile(path, "utf8");
@@ -9,4 +12,7 @@ async function cat(path) {
         process.exit(1);
     }
 }
-cat("one.txt");
+cat(process.argv[2]);
+
+
+
